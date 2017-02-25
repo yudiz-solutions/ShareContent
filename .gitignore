@@ -1,0 +1,8 @@
+ShareContent.xcodeproj/xcuserdata
+ShareContent.xcodeproj/project.xcworkspace
+ShareContent.xcodeproj/project.xcworkspace/xcuserdata
+ShareContent.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Pods
+*.DS_Store
+.DS_Store
+Podfile.lock
