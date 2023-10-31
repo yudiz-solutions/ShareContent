@@ -19,7 +19,7 @@ class ShareViewController: SLComposeServiceViewController {
     override func didSelectPost() {
         if let item = self.extensionContext?.inputItems[0] as? NSExtensionItem{
             for ele in item.attachments!{
-                let itemProvider = ele as! NSItemProvider
+                let itemProvider = ele 
                 
                 if itemProvider.hasItemConformingToTypeIdentifier("public.jpeg"){
                     itemProvider.loadItem(forTypeIdentifier: "public.jpeg", options: nil, completionHandler: { (item, error) in
@@ -31,10 +31,10 @@ class ShareViewController: SLComposeServiceViewController {
                             }
                             
                             if let img = item as? UIImage{
-                                imgData = UIImagePNGRepresentation(img)
+                                imgData = img.pngData()
                             }
                             
-                            let dict: [String : Any] = ["imgData" :  imgData, "name" : self.contentText]
+                            let dict: [String : Any] = ["imgData" :  imgData!, "name" : self.contentText!]
                             let userDefault = UserDefaults(suiteName: "group.yudiz.shareKitDemo")
                             userDefault?.set(dict, forKey: "img")
                             userDefault?.synchronize()
